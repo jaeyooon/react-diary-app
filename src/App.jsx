@@ -10,15 +10,21 @@ import Edit from './pages/Edit';
 const mockData = [
   {
     id: 1,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-02-25").getTime(),
     weatherId: 1,
     content: "1번 일기 내용"
   },
       {
     id: 2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-02-26").getTime(),
     weatherId: 2,
     content: "2번 일기 내용"
+  },
+            {
+    id: 3,
+    createdDate: new Date("2025-01-07").getTime(),
+    weatherId: 3,
+    content: "3번 일기 내용"
   },
 ]
 
@@ -39,8 +45,8 @@ function reducer(state, action) {
   }
 }
 
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
 
@@ -82,25 +88,7 @@ function App() {
   };
 
   return (
-    <>
-      <button onClick={() => {
-        onCreate(new Date().getTime(), 1, "Hello")
-      }}>
-        일기 추가 테스트
-      </button>
-
-      <button onClick={() => {
-        onUpdate(1, new Date().getTime(), 3, "수정된 일기입니다.")
-      }}>
-        일기 수정 테스트
-      </button>
-
-      <button onClick={() => {
-        onDelete(2)
-      }}>
-        일기 삭제 테스트
-      </button>
-      
+    <>   
       <DiaryStateContext.Provider value={data}>   {/* App 컴포넌트의 data state 값을 Routes 아래에 있는 모든 페이지 컴포넌트들에게 공급할 수 있도록 감싸줌. */}
         <DiaryDispatchContext.Provider  
           value={{  // 모든 페이지 컴포넌트들에 상태 변화 함수들을 공급함.

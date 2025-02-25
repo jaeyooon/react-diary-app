@@ -1,0 +1,39 @@
+.DiaryItem {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+
+  padding: 15px 0px;
+  border-bottom: 1px solid #e6e8e6;
+}
+
+.DiaryItem .img_section {
+  min-width: 120px;
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.DiaryItem .img_section > img {
+  width: 70%;
+}
+
+.DiaryItem .info_section {
+  flex: 1;
+  cursor: pointer;
+}
+
+.DiaryItem .created_date {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.DiaryItem .content {
+  font-size: 18px;
+}
+
+.DiaryItem .button_section {
+  min-width: 70px;
+}
