@@ -1,7 +1,7 @@
 import Button from "./Button";
 import "./Editor.css";
 import WeatherItem from "./WeatherItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const weatherList = [
@@ -43,7 +43,7 @@ const getStringedDate = (targetDate) => {   // 날짜 객체를 문자열 형태
   return `${year}-${month}-${date}`;
 }
 
-const Editor = ({onSubmit}) => {
+const Editor = ({initData, onSubmit}) => {
   const [input, setInput] = useState({    // 사용자의 입력을 input state에 저장
     createdDate: new Date(),
     weatherId: 3,
@@ -51,6 +51,15 @@ const Editor = ({onSubmit}) => {
   });
 
   const nav = useNavigate();
+
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createdDate: new Date(Number(initData.createdDate)),
+      });
+    }
+  }, [initData]);
 
   const onChangeInput = (e) => {
     let name = e.target.name;
