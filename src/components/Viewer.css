@@ -1,0 +1,72 @@
+.Viewer > section {
+  width: 100%;
+  margin-bottom: 100px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Viewer > section > h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.Viewer .weather_img_wrapper {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  color: #b9314f;
+  font-size: 25px;
+}
+
+.Viewer img {
+  width: 150px;
+}
+
+.Viewer .weather_img_wrapper_1 {
+  background-color: #fffae5;
+}
+
+.Viewer .weather_img_wrapper_2{
+  background-color: #eaf4f4;
+}
+
+.Viewer .weather_img_wrapper_3 {
+  background-color: #fff1e6;
+}
+
+.Viewer .weather_img_wrapper_4 {
+  background-color: #e3f2fd;
+}
+
+.Viewer .weather_img_wrapper_5 {
+  background-color: #ebf8ee;
+}
+
+.Viewer .content_wrapper {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+
+  word-break: keep-all;   /* 일기 내용이 너무 길어지더라도*/
+  overflow-wrap: break-word;    /* 자연스럽게 줄바꿈이 되도록 하기 위한 것 */
+}
+
+.Viewer .content_wrapper > p {
+  padding: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2.5;
+}
+
+
+

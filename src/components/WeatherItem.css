@@ -11,8 +11,32 @@
   margin-bottom: 10px;
 }
 
-.WeatherItem_selected {
+.WeatherItem_on_1 {
   background-color: #fffae5;
+  color: #b9314f;
+  font-weight: bold;
+}
+
+.WeatherItem_on_2 {
+  background-color: #eaf4f4;
+  color: #b9314f;
+  font-weight: bold;
+}
+
+.WeatherItem_on_3 {
+  background-color: #fff1e6;
+  color: #b9314f;
+  font-weight: bold;
+}
+
+.WeatherItem_on_4 {
+  background-color: #e3f2fd;
+  color: #b9314f;
+  font-weight: bold;
+}
+
+.WeatherItem_on_5 {
+  background-color: #ebf8ee;
   color: #b9314f;
   font-weight: bold;
 }

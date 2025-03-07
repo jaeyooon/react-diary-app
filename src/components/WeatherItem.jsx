@@ -6,7 +6,7 @@ const WeatherItem = ({weatherId, weatherName, isSelected, onClick}) => {
     <div
       onClick={onClick}
       className={`WeatherItem ${
-        isSelected ? `WeatherItem_selected` : ""
+        isSelected ? `WeatherItem_on_${weatherId}` : ""
         }`}
     >
       <img className="weather_img" src={getWeatherImage(weatherId)} />

@@ -3,45 +3,8 @@ import "./Editor.css";
 import WeatherItem from "./WeatherItem";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-const weatherList = [
-  {
-    weatherId: 1,
-    weatherName: "맑음"
-  },
-  {
-    weatherId: 2,
-    weatherName: "흐림"
-  },
-  {
-    weatherId: 3,
-    weatherName: "흐려져 비"
-  },
-  {
-    weatherId: 4,
-    weatherName: "비"
-  },
-  {
-    weatherId: 5,
-    weatherName: "눈"
-  },
-]
-
-const getStringedDate = (targetDate) => {   // 날짜 객체를 문자열 형태로 변환해줌
-  // 날짜 -> YYYY-MM-DD
-  let year = targetDate.getFullYear();
-  let month = targetDate.getMonth() + 1;
-  let date = targetDate.getDate();
-
-  if (month < 10) {   // 10 미만의 월은 두자리 수가 되지 않으므로 템플릿 리터럴로 두자리 수로 바꿔줌.
-    month = `0${month}`;
-  }
-  if (date < 10) {
-    date = `0${date}`;
-  }
-
-  return `${year}-${month}-${date}`;
-}
+import { weatherList } from "../util/constants";
+import { getStringedDate } from "../util/get-stringed-date";
 
 const Editor = ({initData, onSubmit}) => {
   const [input, setInput] = useState({    // 사용자의 입력을 input state에 저장
@@ -77,7 +40,7 @@ const Editor = ({initData, onSubmit}) => {
 
   const onSubmitButtonClick = () => {
     onSubmit(input);
-  }
+  };
 
   return (
     <div className="Editor">

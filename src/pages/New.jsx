@@ -16,6 +16,7 @@ const New = () => {
       input.weatherId,
       input.content
     );
+    
     nav('/', {replace: true})   // 작성완료 후 홈페이지로 이동하고 뒤로가기 방지되도록 함
   }
 

@@ -5,46 +5,52 @@ import Editor from "../components/Editor";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DiaryDispatchContext, DiaryStateContext } from "../App";
+import useDiary from "../hooks/useDiary";
+import Swal from "sweetalert2";
 
 const Edit = () => {
   const params = useParams();
   const nav = useNavigate();
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
-  const data = useContext(DiaryStateContext);
-  const [curDiaryItem, setCurDiaryItem] = useState();
 
-  useEffect(() => {
-    const currentDiaryItem = data.find(   // 슈정하고자 하는 일기 데이터를 가져옴.
-      (item) => String(item.id) === String(params.id)
-    );
-
-    if (!currentDiaryItem) {
-      window.alert("⚠존재하지 않는 일기입니다.")
-      nav("/", { replace: true });
-    }
-
-    setCurDiaryItem(currentDiaryItem);
-  }, [params.id])
+  const curDiaryItem = useDiary(params.id);
 
   const onClickDelete = () => {
-    if (
-      window.confirm("✔일기를 정말 삭제할까요? 삭제 후에는 복구가 되지 않아요.") 
-    ) {
-      // 일기 삭제 로직
-      onDelete(params.id);
-      nav("/", { replace: true });
-    }
+    Swal.fire({
+      icon: "warning",
+      title: "일기를 정말 삭제할까요?",
+      text: "삭제된 일기는 복구할 수 없어요.",
+      showCancelButton: true,
+      confirmButtonColor: "#0eb1d2",
+      cancelButtonColor: "#ff7075",
+      confirmButtonText: "확인",
+      cancelButtonText: "취소",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        onDelete(params.id);
+        nav("/", { replace: true });
+      };
+    });
   };
 
   const onSubmit = (input) => {
-    if (window.confirm("✔일기를 정말 수정할까요?"))
-      onUpdate(
-        params.id,
-        input.createdDate.getTime(),
-        input.weatherId,
-        input.content
-      );
-    nav("/", { replace: true });
+    onUpdate(
+      params.id,
+      input.createdDate.getTime(),
+      input.weatherId,
+      input.content
+    );
+    Swal.fire({
+      icon: "success",
+      title: "수정 완료되었습니다!",
+      showCancelButton: false,
+      confirmButtonColor: "#0eb1d2",
+      confirmButtonText: "확인",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        nav("/", { replace: true });
+      };
+    });
   };
 
   return (

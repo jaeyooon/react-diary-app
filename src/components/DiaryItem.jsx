@@ -10,7 +10,7 @@ const DiaryItem = ({id, weatherId, createdDate, content}) => {
     <div className="DiaryItem">
       <div
         onClick={() => nav(`/diary/${id}`)}   // 이미지 클릭시 해당 일기 상세 페이지로 이동
-        className="img_section">
+        className={`img_section img_section_${weatherId}`}>
         <img src={getWeatherImage(weatherId)} />
       </div>
       <div

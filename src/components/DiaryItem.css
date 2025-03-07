@@ -14,10 +14,31 @@
   display: flex;
   justify-content: center;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .DiaryItem .img_section > img {
   width: 70%;
+}
+
+.DiaryItem .img_section_1 {
+  background-color: #fffae5;
+}
+
+.DiaryItem .img_section_2 {
+  background-color: #eaf4f4;
+}
+
+.DiaryItem .img_section_3 {
+  background-color: #fff1e6;
+}
+
+.DiaryItem .img_section_4 {
+  background-color: #e3f2fd;
+}
+
+.DiaryItem .img_section_5 {
+  background-color: #ebf8ee;
 }
 
 .DiaryItem .info_section {
