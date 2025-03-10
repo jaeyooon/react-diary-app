@@ -5,10 +5,12 @@ import Viewer from "../components/Viewer";
 import { useNavigate } from "react-router-dom";
 import useDiary from "../hooks/useDiary";
 import { getStringedDate } from "../util/get-stringed-date";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Diary = () => {
   const params = useParams();
   const nav = useNavigate();
+  usePageTitle(`${params.id}번 일기`);
 
   const curDiaryItem = useDiary(params.id);   // 해당 일기 데이터를 가져옴
   

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 
 import { useState, useContext } from "react";
 import { DiaryStateContext } from "../App";
+import usePageTitle from "../hooks/usePageTitle";
 
 // ✨로직이 복잡하고 해당함수가 매개변수만으로도 필요한 데이터를 다 제공받을 수 있으며 불필요한 함수의 재생성을 방지하기 위해 컴포넌트 외부에 함수 선언
 const getMonthlyData = (pivotDate, data) => {
@@ -34,6 +35,7 @@ const getMonthlyData = (pivotDate, data) => {
 const Home = () => {
   const data = useContext(DiaryStateContext);   // useContext를 통해 DiaryStateContext로부터 diary data를 공급받음.
   const [pivotDate, setPivotDate] = useState(new Date());
+  usePageTitle("MY 다이어리")
 
   const monthlyData = getMonthlyData(pivotDate, data);
 

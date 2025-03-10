@@ -7,13 +7,14 @@ import { useContext, useEffect, useState } from "react";
 import { DiaryDispatchContext, DiaryStateContext } from "../App";
 import useDiary from "../hooks/useDiary";
 import Swal from "sweetalert2";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Edit = () => {
   const params = useParams();
   const nav = useNavigate();
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
-
   const curDiaryItem = useDiary(params.id);
+  usePageTitle(`${params.id}번 일기 수정`);
 
   const onClickDelete = () => {
     Swal.fire({
@@ -22,7 +23,6 @@ const Edit = () => {
       text: "삭제된 일기는 복구할 수 없어요.",
       showCancelButton: true,
       confirmButtonColor: "#0eb1d2",
-      cancelButtonColor: "#ff7075",
       confirmButtonText: "확인",
       cancelButtonText: "취소",
     }).then((res) => {

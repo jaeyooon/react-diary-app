@@ -15,10 +15,13 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 5px;
+  align-items: center;
 }
 
 .DiaryItem .img_section > img {
-  width: 70%;
+  width: 60%;
+  height: 80%;
+  
 }
 
 .DiaryItem .img_section_1 {
