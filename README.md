@@ -16,5 +16,5 @@
 - [sweetalert2](https://sweetalert2.github.io/#examples)를 이용하여 알림창 구현
 - 페이지별 타이틀 설정 & Favicon & 오픈 그래프 태그 설정  
   - Favicon 아이콘 출처  
-  <a href="https://www.flaticon.com/kr/free-icons/" title="일기 아이콘">일기 아이콘 제작자: Freepik - Flaticon</a>  
+  <a href="https://www.flaticon.com/kr/" title="아이콘 출처">Freepik - Flaticon</a> 
 
