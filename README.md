@@ -8,5 +8,7 @@
 </div>
 
 - Vercel 이용하여 배포    
-  👉 https://its-my-diary.vercel.app/
+  👉 https://its-my-diary.vercel.app/  
+- 파비콘 아이콘 출처  
+<a href="https://www.flaticon.com/kr/free-icons/" title="일기 아이콘">일기 아이콘 제작자: Freepik - Flaticon</a>
 
